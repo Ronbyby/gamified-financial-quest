@@ -26,7 +26,7 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           <div className="space-y-6">
             <div className="h-40 bg-nest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1623104884-16c736554e5d"
+                src="https://images.unsplash.com/photo-1623104884-16c736554e5d?auto=format&fit=crop&w=800&q=80"
                 alt="Mother playing with kids while managing finances"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
@@ -48,8 +48,8 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           <div className="space-y-6">
             <div className="h-40 bg-debt-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                alt="Person worried about debt"
+                src="https://images.unsplash.com/photo-1494599948593-3dafe8338d71?auto=format&fit=crop&w=800&q=80"
+                alt="Person working on financial planning"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
@@ -70,8 +70,8 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           <div className="space-y-6">
             <div className="h-40 bg-invest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-                alt="Successful investor"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                alt="Modern investment and growth concept"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
