@@ -68,7 +68,6 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         notifyEmail: 'ronby1@gmail.com'
       });
       
-      // Invalidate and refetch waitlist data
       await queryClient.invalidateQueries({ queryKey: ['waitlist'] });
       
       toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
@@ -158,7 +157,7 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
             <img 
-              src="/moedi-logo.png" 
+              src="moedi-logo.png" 
               alt="Moedi" 
               className="w-24 h-24 mb-4 object-contain"
             />
