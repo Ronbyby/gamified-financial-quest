@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import type { Persona } from "@/types";
 
 interface PersonaSelectionProps {
@@ -8,49 +7,68 @@ interface PersonaSelectionProps {
 
 export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
   return (
-    <div className="space-y-8 animate-fade-in">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Choose Your Financial Journey</h1>
-        <p className="text-gray-600">Select the path that best matches your current situation</p>
+    <div className="space-y-12 animate-fade-in">
+      <div className="text-center space-y-6">
+        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-transparent bg-clip-text animate-fade-in">
+          Begin Your Financial Adventure!
+        </h1>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          Ready to level up your financial game? Choose your path and embark on an exciting journey to financial success! 🚀
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-8 px-4">
         <Card 
-          className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-nest-accent"
+          className="group p-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-nest-accent transform hover:-translate-y-2 animate-fade-in"
           onClick={() => onSelect("nest")}
+          style={{ animationDelay: "0.3s" }}
         >
-          <div className="space-y-4">
-            <div className="h-32 bg-nest-primary rounded-lg flex items-center justify-center">
-              <span className="text-4xl">🏠</span>
+          <div className="space-y-6">
+            <div className="h-40 bg-nest-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <span className="text-6xl group-hover:animate-bounce">🏠</span>
             </div>
-            <h2 className="text-xl font-semibold">Financial Nest Builder</h2>
-            <p className="text-gray-600">Create a secure financial future for your growing family</p>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text">
+              Financial Nest Builder
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Create a secure and cozy financial future for your growing family. Perfect for long-term planners! 
+            </p>
           </div>
         </Card>
 
         <Card 
-          className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-debt-accent"
+          className="group p-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-debt-accent transform hover:-translate-y-2 animate-fade-in"
           onClick={() => onSelect("debt")}
+          style={{ animationDelay: "0.4s" }}
         >
-          <div className="space-y-4">
-            <div className="h-32 bg-debt-primary rounded-lg flex items-center justify-center">
-              <span className="text-4xl">⚔️</span>
+          <div className="space-y-6">
+            <div className="h-40 bg-debt-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <span className="text-6xl group-hover:animate-pulse">⚔️</span>
             </div>
-            <h2 className="text-xl font-semibold">Debt Slayer Adventure</h2>
-            <p className="text-gray-600">Conquer your debts and achieve financial freedom</p>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
+              Debt Slayer Adventure
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Battle your debts head-on and emerge victorious! Perfect for those ready to break free from financial burdens.
+            </p>
           </div>
         </Card>
 
         <Card 
-          className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-invest-accent"
+          className="group p-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-invest-accent transform hover:-translate-y-2 animate-fade-in"
           onClick={() => onSelect("invest")}
+          style={{ animationDelay: "0.5s" }}
         >
-          <div className="space-y-4">
-            <div className="h-32 bg-invest-primary rounded-lg flex items-center justify-center">
-              <span className="text-4xl">📈</span>
+          <div className="space-y-6">
+            <div className="h-40 bg-invest-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <span className="text-6xl group-hover:animate-pulse">📈</span>
             </div>
-            <h2 className="text-xl font-semibold">Investor's Journey</h2>
-            <p className="text-gray-600">Start your path to growing wealth through investments</p>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+              Investor's Journey
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Master the art of growing wealth through smart investments. Perfect for aspiring investors!
+            </p>
           </div>
         </Card>
       </div>
