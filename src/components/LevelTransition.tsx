@@ -22,11 +22,11 @@ export const LevelTransition = ({ level, persona, onContinue }: LevelTransitionP
   const getLevelTitle = () => {
     switch (persona) {
       case "nest":
-        return level === 1 ? "Emergency Ready" : "Future Planner";
+        return level === 1 ? "Preparação para Emergências" : "Planejador do Futuro";
       case "debt":
-        return level === 1 ? "Building Your Arsenal" : "Future Goals";
+        return level === 1 ? "Construindo Seu Arsenal" : "Objetivos Futuros";
       case "invest":
-        return level === 1 ? "Picking Your Path" : "Long-Term Vision";
+        return level === 1 ? "Escolhendo Seu Caminho" : "Visão de Longo Prazo";
     }
   };
 
@@ -49,16 +49,16 @@ export const LevelTransition = ({ level, persona, onContinue }: LevelTransitionP
           <span className="text-6xl">🎉</span>
         </div>
         <h1 className="text-3xl font-bold mb-4">
-          Level {level} Complete!
+          Nível {level} Completo!
         </h1>
         <p className="text-xl mb-6">
-          Get ready for <span className={accentColor}>{getLevelTitle()}</span>
+          Prepare-se para <span className={accentColor}>{getLevelTitle()}</span>
         </p>
         <Button 
           onClick={onContinue}
           className="animate-pulse hover:animate-none"
         >
-          Continue Your Journey
+          Continue Sua Jornada
         </Button>
       </Card>
     </div>
