@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Star, Clock } from "lucide-react";
+import { Trophy, Star, Clock, Home } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
@@ -12,9 +12,10 @@ import { useQueryClient } from "@tanstack/react-query";
 interface ResultsProps {
   persona: Persona;
   answers: Answer[];
+  onReset: () => void;
 }
 
-export const Results = ({ persona, answers }: ResultsProps) => {
+export const Results = ({ persona, answers, onReset }: ResultsProps) => {
   const [email, setEmail] = useState("");
   const queryClient = useQueryClient();
 
@@ -97,6 +98,16 @@ export const Results = ({ persona, answers }: ResultsProps) => {
 
   return (
     <div className="space-y-8 animate-fade-in">
+      <div className="flex justify-end">
+        <Button 
+          variant="outline" 
+          onClick={onReset}
+          className="flex items-center gap-2"
+        >
+          <Home className="w-4 h-4" />
+          Início
+        </Button>
+      </div>
       <Card className={`p-8 ${bgColor} border-none text-center`}>
         <div className="mb-6">
           <Badge className={`${badgeColor} p-3 text-white`}>
