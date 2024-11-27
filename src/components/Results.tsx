@@ -168,7 +168,7 @@ export const Results = ({ persona, answers, onReset }: ResultsProps) => {
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
             <img 
-              src="/lovable-uploads/24bb8e9f-2b26-4032-8407-918d5cbe615a.png"
+              src="/lovable-uploads/92da5446-330f-4752-8135-202daa9b9185.png"
               alt="Logo Moedin com um personagem de moeda sorridente usando óculos" 
               className="w-full max-w-[200px] mb-4 object-contain rounded-lg"
             />
