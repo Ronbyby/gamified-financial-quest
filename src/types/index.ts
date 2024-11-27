@@ -3,6 +3,7 @@ export type Persona = "nest" | "debt" | "invest";
 export type Question = {
   id: string;
   text: string;
+  level: number;
   options: {
     text: string;
     value: string;
