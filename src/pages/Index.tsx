@@ -20,7 +20,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#F1F0FB] via-[#F6F5FF] to-[#FAFAFE] py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {!selectedPersona && (
           <PersonaSelection onSelect={handlePersonaSelect} />
