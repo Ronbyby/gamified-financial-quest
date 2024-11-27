@@ -116,8 +116,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         <div className="grid md:grid-cols-3 gap-4 mb-8">
           <Card className="p-4 bg-white">
             <div className="flex flex-col items-center">
-              <Badge className={`${badgeColor} p-2 mb-2`}>
-                <Trophy className="w-4 h-4 text-white" />
+              <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
+                <Trophy className="w-4 h-4" />
               </Badge>
               <h3 className="font-semibold mb-2">Achievement Unlocked</h3>
               <p className="text-sm text-gray-600">Self-Awareness Master</p>
@@ -125,8 +125,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
           </Card>
           <Card className="p-4 bg-white">
             <div className="flex flex-col items-center">
-              <Badge className={`${badgeColor} p-2 mb-2`}>
-                <Star className="w-4 h-4 text-white" />
+              <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
+                <Star className="w-4 h-4" />
               </Badge>
               <h3 className="font-semibold mb-2">Your Score</h3>
               <p className="text-sm text-gray-600">Financial Explorer Level 1</p>
@@ -134,8 +134,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
           </Card>
           <Card className="p-4 bg-white">
             <div className="flex flex-col items-center">
-              <Badge className={`${badgeColor} p-2 mb-2`}>
-                <Clock className="w-4 h-4 text-white" />
+              <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
+                <Clock className="w-4 h-4" />
               </Badge>
               <h3 className="font-semibold mb-2">Next Steps</h3>
               <p className="text-sm text-gray-600">Follow Your Action Plan</p>
@@ -159,7 +159,11 @@ export const Results = ({ persona, answers }: ResultsProps) => {
 
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
-            <img src="/moedi-logo.png" alt="Moedi" className="w-24 h-24 mb-4" />
+            <img 
+              src="/moedi-logo.png" 
+              alt="Moedi" 
+              className="w-24 h-24 mb-4 object-contain"
+            />
             <h2 className="text-xl font-bold mb-2">Coming Soon</h2>
             <p className="text-gray-600 mb-4">
               Join the waitlist for Moedi, your AI-powered financial companion that will help simplify your journey.
