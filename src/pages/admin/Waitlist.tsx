@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { useQuery } from '@tanstack/react-query';
 import { Loader2 } from "lucide-react";
+import { getWaitlistEntries } from "@/api/waitlist";
 
 interface WaitlistEntry {
   email: string;
@@ -11,18 +12,7 @@ interface WaitlistEntry {
 const WaitlistAdmin = () => {
   const { data: entries, isLoading, error } = useQuery({
     queryKey: ['waitlist'],
-    queryFn: async () => {
-      try {
-        const response = await fetch('/api/waitlist');
-        if (!response.ok) {
-          throw new Error('Failed to fetch waitlist data');
-        }
-        return response.json() as Promise<WaitlistEntry[]>;
-      } catch (error) {
-        console.error('Waitlist fetch error:', error);
-        throw error;
-      }
-    },
+    queryFn: getWaitlistEntries
   });
 
   if (isLoading) {

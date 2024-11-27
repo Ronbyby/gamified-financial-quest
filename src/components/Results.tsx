@@ -6,6 +6,7 @@ import { Trophy, Star, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
+import { addWaitlistEntry } from "@/api/waitlist";
 
 interface ResultsProps {
   persona: Persona;
@@ -59,19 +60,11 @@ export const Results = ({ persona, answers }: ResultsProps) => {
     }
 
     try {
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          email,
-          persona,
-          notifyEmail: 'ronby1@gmail.com'
-        }),
+      const response = await addWaitlistEntry({ 
+        email,
+        persona,
+        notifyEmail: 'ronby1@gmail.com'
       });
-
-      if (!response.ok) throw new Error('Failed to join waitlist');
       
       toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
       setEmail("");
