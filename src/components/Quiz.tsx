@@ -6,6 +6,9 @@ import { LevelTransition } from "@/components/LevelTransition";
 import type { Persona, Answer } from "@/types";
 import { toast } from "sonner";
 
+// In-memory storage for quiz results (replace with database in production)
+const quizResults: { persona: string; answers: Answer[]; timestamp: string }[] = [];
+
 interface QuizProps {
   persona: Persona;
   onComplete: (answers: Answer[]) => void;
@@ -48,6 +51,13 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
     } else if (currentLevel < 3) {
       setShowLevelTransition(true);
     } else {
+      // Store quiz results when completed
+      const result = {
+        persona,
+        answers: newAnswers,
+        timestamp: new Date().toISOString()
+      };
+      quizResults.push(result);
       onComplete(newAnswers);
     }
   };
