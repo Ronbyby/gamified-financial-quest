@@ -1,5 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Trophy } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
 
 interface ResultsProps {
@@ -8,6 +13,8 @@ interface ResultsProps {
 }
 
 export const Results = ({ persona, answers }: ResultsProps) => {
+  const [email, setEmail] = useState("");
+
   const getPersonaTitle = () => {
     switch (persona) {
       case "nest":
@@ -17,6 +24,42 @@ export const Results = ({ persona, answers }: ResultsProps) => {
       case "invest":
         return "Investment Explorer";
     }
+  };
+
+  const getActionPlan = () => {
+    switch (persona) {
+      case "nest":
+        return [
+          "Start with an emergency fund goal of $1,000",
+          "Track your daily expenses for 30 days",
+          "Set up automatic savings of 10% of your income",
+          "Review and optimize your monthly subscriptions"
+        ];
+      case "debt":
+        return [
+          "List all debts with their interest rates",
+          "Set up minimum payments for all debts",
+          "Apply the snowball method to smallest debt",
+          "Negotiate with creditors for better rates"
+        ];
+      case "invest":
+        return [
+          "Open a retirement account if you haven't",
+          "Research low-cost index funds",
+          "Start with small, regular investments",
+          "Learn about diversification strategies"
+        ];
+    }
+  };
+
+  const handleWaitlistSignup = () => {
+    // In a real app, this would connect to an API
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+    toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
+    setEmail("");
   };
 
   const bgColor = {
@@ -31,19 +74,28 @@ export const Results = ({ persona, answers }: ResultsProps) => {
     invest: "text-invest-accent"
   }[persona];
 
+  const badgeColor = {
+    nest: "bg-nest-accent",
+    debt: "bg-debt-accent",
+    invest: "bg-invest-accent"
+  }[persona];
+
   return (
     <div className="space-y-8 animate-fade-in">
       <Card className={`p-8 ${bgColor} border-none text-center`}>
         <div className="mb-6">
-          <span className="text-6xl">🏆</span>
+          <Badge className={`${badgeColor} p-3 text-white`}>
+            <Trophy className="w-6 h-6" />
+          </Badge>
         </div>
         <h1 className="text-3xl font-bold mb-4">
           Congratulations, <span className={accentColor}>{getPersonaTitle()}</span>!
         </h1>
         <p className="text-gray-600 mb-8">
-          You've completed your financial assessment. Based on your answers, we've prepared some personalized insights for you.
+          You've completed your financial assessment. Based on your answers, we've prepared a personalized action plan for you.
         </p>
-        <div className="grid md:grid-cols-3 gap-4">
+        
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
           <Card className="p-4 bg-white">
             <h3 className="font-semibold mb-2">Achievement Unlocked</h3>
             <p className="text-sm text-gray-600">Self-Awareness Master</p>
@@ -54,9 +106,42 @@ export const Results = ({ persona, answers }: ResultsProps) => {
           </Card>
           <Card className="p-4 bg-white">
             <h3 className="font-semibold mb-2">Next Steps</h3>
-            <p className="text-sm text-gray-600">Create your action plan</p>
+            <p className="text-sm text-gray-600">Follow Your Action Plan</p>
           </Card>
         </div>
+
+        <Card className="p-6 bg-white mb-8">
+          <h2 className="text-xl font-bold mb-4">Your Personal Action Plan</h2>
+          <ul className="space-y-3">
+            {getActionPlan().map((step, index) => (
+              <li key={index} className="flex items-center gap-2">
+                <span className={`${badgeColor} text-white w-6 h-6 rounded-full flex items-center justify-center text-sm`}>
+                  {index + 1}
+                </span>
+                <span className="text-gray-700">{step}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+
+        <Card className="p-6 bg-white">
+          <h2 className="text-xl font-bold mb-2">Want More Personalized Guidance?</h2>
+          <p className="text-gray-600 mb-4">
+            Join the waitlist for Meodin, our new AI-powered financial companion that will help simplify your journey.
+          </p>
+          <div className="flex gap-2">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="max-w-xs"
+            />
+            <Button onClick={handleWaitlistSignup}>
+              Join Waitlist
+            </Button>
+          </div>
+        </Card>
       </Card>
     </div>
   );
