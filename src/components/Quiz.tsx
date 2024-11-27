@@ -145,3 +145,4 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
       </Card>
     </div>
   );
+};
