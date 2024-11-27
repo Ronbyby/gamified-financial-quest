@@ -13,7 +13,7 @@ const WaitlistAdmin = () => {
   const { data: entries, isLoading, error } = useQuery({
     queryKey: ['waitlist'],
     queryFn: getWaitlistEntries,
-    refetchInterval: 5000, // Refetch every 5 seconds
+    refetchInterval: 5000,
   });
 
   if (isLoading) {
@@ -27,18 +27,18 @@ const WaitlistAdmin = () => {
   if (error) {
     return (
       <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-red-500 mb-2">Error Loading Waitlist</h1>
-        <p className="text-gray-600">Please try again later or contact support if the issue persists.</p>
+        <h1 className="text-2xl font-bold text-red-500 mb-2">Erro ao Carregar Lista de Espera</h1>
+        <p className="text-gray-600">Por favor, tente novamente mais tarde ou entre em contato com o suporte se o problema persistir.</p>
       </div>
     );
   }
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Waitlist Entries</h1>
+      <h1 className="text-2xl font-bold mb-6">Inscrições na Lista de Espera</h1>
       {!entries || entries.length === 0 ? (
         <Card className="p-4 text-center text-gray-500">
-          No entries in the waitlist yet
+          Ainda não há inscrições na lista de espera
         </Card>
       ) : (
         <div className="space-y-4">

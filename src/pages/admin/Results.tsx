@@ -4,7 +4,6 @@ import { Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Answer } from "@/types";
 
-// In-memory storage for quiz results (replace with database in production)
 const quizResults: { persona: string; answers: Answer[]; timestamp: string }[] = [];
 
 const getQuizResults = async () => quizResults;
@@ -13,7 +12,7 @@ const ResultsAdmin = () => {
   const { data: results, isLoading, error } = useQuery({
     queryKey: ['quiz-results'],
     queryFn: getQuizResults,
-    refetchInterval: 5000, // Refetch every 5 seconds
+    refetchInterval: 5000,
   });
 
   if (isLoading) {
@@ -27,18 +26,18 @@ const ResultsAdmin = () => {
   if (error) {
     return (
       <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold text-red-500 mb-2">Error Loading Results</h1>
-        <p className="text-gray-600">Please try again later or contact support if the issue persists.</p>
+        <h1 className="text-2xl font-bold text-red-500 mb-2">Erro ao Carregar Resultados</h1>
+        <p className="text-gray-600">Por favor, tente novamente mais tarde ou entre em contato com o suporte se o problema persistir.</p>
       </div>
     );
   }
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Quiz Results</h1>
+      <h1 className="text-2xl font-bold mb-6">Resultados do Quiz</h1>
       {!results || results.length === 0 ? (
         <Card className="p-4 text-center text-gray-500">
-          No quiz results yet
+          Ainda não há resultados do quiz
         </Card>
       ) : (
         <div className="space-y-4">
@@ -52,10 +51,10 @@ const ResultsAdmin = () => {
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="font-medium">Answers:</h4>
+                  <h4 className="font-medium">Respostas:</h4>
                   {result.answers.map((answer, i) => (
                     <p key={i} className="text-sm text-gray-600">
-                      Question {answer.questionId}: {answer.selectedOption}
+                      Questão {answer.questionId}: {answer.selectedOption}
                     </p>
                   ))}
                 </div>

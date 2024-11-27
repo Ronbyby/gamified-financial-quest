@@ -21,11 +21,11 @@ const Navigation = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">
-                Home
+                Início
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>About</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Sobre</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="w-48 p-2">
                   <a 
@@ -34,19 +34,19 @@ const Navigation = () => {
                     rel="noopener noreferrer" 
                     className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
                   >
-                    About Us
+                    Sobre Nós
                   </a>
                   <Link 
                     to="/admin/waitlist" 
                     className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
                   >
-                    Admin Waitlist
+                    Admin Lista de Espera
                   </Link>
                   <Link 
                     to="/admin/results" 
                     className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
                   >
-                    Admin Results
+                    Admin Resultados
                   </Link>
                 </div>
               </NavigationMenuContent>

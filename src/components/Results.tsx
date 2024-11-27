@@ -21,11 +21,11 @@ export const Results = ({ persona, answers }: ResultsProps) => {
   const getPersonaTitle = () => {
     switch (persona) {
       case "nest":
-        return "Financial Nest Builder";
+        return "Construtor do Ninho Financeiro";
       case "debt":
-        return "Debt Slayer";
+        return "Caçador de Dívidas";
       case "invest":
-        return "Investment Explorer";
+        return "Explorador de Investimentos";
     }
   };
 
@@ -33,31 +33,31 @@ export const Results = ({ persona, answers }: ResultsProps) => {
     switch (persona) {
       case "nest":
         return [
-          "Start with an emergency fund goal of $1,000",
-          "Track your daily expenses for 30 days",
-          "Set up automatic savings of 10% of your income",
-          "Review and optimize your monthly subscriptions"
+          "Comece com uma meta de fundo de emergência de R$ 5.000",
+          "Acompanhe seus gastos diários por 30 dias",
+          "Configure poupança automática de 10% da sua renda",
+          "Revise e otimize suas assinaturas mensais"
         ];
       case "debt":
         return [
-          "List all debts with their interest rates",
-          "Set up minimum payments for all debts",
-          "Apply the snowball method to smallest debt",
-          "Negotiate with creditors for better rates"
+          "Liste todas as dívidas com suas taxas de juros",
+          "Configure pagamentos mínimos para todas as dívidas",
+          "Aplique o método bola de neve na menor dívida",
+          "Negocie com credores por melhores taxas"
         ];
       case "invest":
         return [
-          "Open a retirement account if you haven't",
-          "Research low-cost index funds",
-          "Start with small, regular investments",
-          "Learn about diversification strategies"
+          "Abra uma conta de aposentadoria se ainda não tiver",
+          "Pesquise sobre fundos de índice de baixo custo",
+          "Comece com pequenos investimentos regulares",
+          "Aprenda sobre estratégias de diversificação"
         ];
     }
   };
 
   const handleWaitlistSignup = async () => {
     if (!email) {
-      toast.error("Please enter your email address");
+      toast.error("Por favor, insira seu endereço de e-mail");
       return;
     }
 
@@ -70,10 +70,10 @@ export const Results = ({ persona, answers }: ResultsProps) => {
       
       await queryClient.invalidateQueries({ queryKey: ['waitlist'] });
       
-      toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
+      toast.success("Obrigado por se juntar à nossa lista de espera! Entraremos em contato em breve.");
       setEmail("");
     } catch (error) {
-      toast.error("Failed to join the waitlist. Please try again.");
+      toast.error("Falha ao entrar na lista de espera. Por favor, tente novamente.");
     }
   };
 
@@ -104,10 +104,10 @@ export const Results = ({ persona, answers }: ResultsProps) => {
           </Badge>
         </div>
         <h1 className="text-3xl font-bold mb-4">
-          Congratulations, <span className={accentColor}>{getPersonaTitle()}</span>!
+          Parabéns, <span className={accentColor}>{getPersonaTitle()}</span>!
         </h1>
         <p className="text-gray-600 mb-8">
-          You've completed your financial assessment. Based on your answers, we've prepared a personalized action plan for you.
+          Você completou sua avaliação financeira. Com base em suas respostas, preparamos um plano de ação personalizado para você.
         </p>
         
         <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -116,8 +116,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
               <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
                 <Trophy className="w-4 h-4" />
               </Badge>
-              <h3 className="font-semibold mb-2">Achievement Unlocked</h3>
-              <p className="text-sm text-gray-600">Self-Awareness Master</p>
+              <h3 className="font-semibold mb-2">Conquista Desbloqueada</h3>
+              <p className="text-sm text-gray-600">Mestre do Autoconhecimento</p>
             </div>
           </Card>
           <Card className="p-4 bg-white">
@@ -125,8 +125,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
               <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
                 <Star className="w-4 h-4" />
               </Badge>
-              <h3 className="font-semibold mb-2">Your Score</h3>
-              <p className="text-sm text-gray-600">Financial Explorer Level 1</p>
+              <h3 className="font-semibold mb-2">Sua Pontuação</h3>
+              <p className="text-sm text-gray-600">Explorador Financeiro Nível 1</p>
             </div>
           </Card>
           <Card className="p-4 bg-white">
@@ -134,14 +134,14 @@ export const Results = ({ persona, answers }: ResultsProps) => {
               <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-2`}>
                 <Clock className="w-4 h-4" />
               </Badge>
-              <h3 className="font-semibold mb-2">Next Steps</h3>
-              <p className="text-sm text-gray-600">Follow Your Action Plan</p>
+              <h3 className="font-semibold mb-2">Próximos Passos</h3>
+              <p className="text-sm text-gray-600">Siga Seu Plano de Ação</p>
             </div>
           </Card>
         </div>
 
         <Card className="p-6 bg-white mb-8">
-          <h2 className="text-xl font-bold mb-4">Your Personal Action Plan</h2>
+          <h2 className="text-xl font-bold mb-4">Seu Plano de Ação Pessoal</h2>
           <ul className="space-y-3">
             {getActionPlan().map((step, index) => (
               <li key={index} className="flex items-center gap-2">
@@ -158,23 +158,23 @@ export const Results = ({ persona, answers }: ResultsProps) => {
           <div className="flex flex-col items-center">
             <img 
               src="moedi-logo.png"
-              alt="Moedin logo with a smiling coin character wearing glasses" 
+              alt="Logo Moedin com um personagem de moeda sorridente usando óculos" 
               className="w-full max-w-2xl mb-4 object-cover rounded-lg"
             />
-            <h2 className="text-xl font-bold mb-2">Coming Soon</h2>
+            <h2 className="text-xl font-bold mb-2">Em Breve</h2>
             <p className="text-gray-600 mb-4">
-              Join the waitlist for your AI-powered financial companion that will help simplify your journey.
+              Entre na lista de espera para seu companheiro financeiro com IA que ajudará a simplificar sua jornada.
             </p>
             <div className="flex gap-2">
               <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Digite seu e-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="max-w-xs"
               />
               <Button onClick={handleWaitlistSignup}>
-                Join Waitlist
+                Entrar na Lista
               </Button>
             </div>
           </div>

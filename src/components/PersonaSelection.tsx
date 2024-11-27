@@ -10,10 +10,10 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
     <div className="space-y-12 animate-fade-in">
       <div className="text-center space-y-6">
         <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-transparent bg-clip-text animate-fade-in">
-          Begin Your Financial Adventure!
+          Comece Sua Jornada Financeira!
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Ready to level up your financial game? Choose your path and embark on an exciting journey to financial success! 🚀
+          Pronto para elevar seu jogo financeiro? Escolha seu caminho e embarque em uma jornada emocionante rumo ao sucesso financeiro! 🚀
         </p>
       </div>
 
@@ -27,15 +27,15 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
             <div className="h-40 bg-nest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
                 src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80"
-                alt="Mother playing with kids while managing finances"
+                alt="Mãe brincando com filhos enquanto gerencia finanças"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text">
-              Financial Nest Builder
+              Construtor do Ninho Financeiro
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Create a secure and cozy financial future for your growing family. Perfect for long-term planners! 
+              Crie um futuro financeiro seguro e aconchegante para sua família em crescimento. Perfeito para planejadores de longo prazo!
             </p>
           </div>
         </Card>
@@ -49,15 +49,15 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
             <div className="h-40 bg-debt-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
                 src="https://images.unsplash.com/photo-1494599948593-3dafe8338d71?auto=format&fit=crop&w=800&q=80"
-                alt="Person working on financial planning"
+                alt="Pessoa trabalhando em planejamento financeiro"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
-              Debt Slayer Adventure
+              Aventura do Caçador de Dívidas
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Battle your debts head-on and emerge victorious! Perfect for those ready to break free from financial burdens.
+              Enfrente suas dívidas de frente e saia vitorioso! Perfeito para quem está pronto para se libertar das cargas financeiras.
             </p>
           </div>
         </Card>
@@ -71,15 +71,15 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
             <div className="h-40 bg-invest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-                alt="Modern investment and growth concept"
+                alt="Conceito moderno de investimento e crescimento"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
-              Investor's Journey
+              Jornada do Investidor
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              Master the art of growing wealth through smart investments. Perfect for aspiring investors!
+              Domine a arte de fazer seu dinheiro crescer através de investimentos inteligentes. Perfeito para aspirantes a investidores!
             </p>
           </div>
         </Card>
