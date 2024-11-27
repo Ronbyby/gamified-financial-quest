@@ -52,14 +52,32 @@ export const Results = ({ persona, answers }: ResultsProps) => {
     }
   };
 
-  const handleWaitlistSignup = () => {
-    // In a real app, this would connect to an API
+  const handleWaitlistSignup = async () => {
     if (!email) {
       toast.error("Please enter your email address");
       return;
     }
-    toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
-    setEmail("");
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email,
+          persona,
+          notifyEmail: 'ronby1@gmail.com'
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to join waitlist');
+      
+      toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
+      setEmail("");
+    } catch (error) {
+      toast.error("Failed to join the waitlist. Please try again.");
+    }
   };
 
   const bgColor = {
