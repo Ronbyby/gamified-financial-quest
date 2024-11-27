@@ -25,28 +25,31 @@ const Navigation = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Admin</NavigationMenuTrigger>
+              <NavigationMenuTrigger>About</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="w-48 p-2">
+                  <a 
+                    href="http://moedin.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
+                  >
+                    About Us
+                  </a>
                   <Link 
                     to="/admin/waitlist" 
                     className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
                   >
-                    Waitlist
+                    Admin Waitlist
                   </Link>
                   <Link 
                     to="/admin/results" 
                     className="block px-2 py-1 text-sm rounded hover:bg-accent transition-colors"
                   >
-                    Results
+                    Admin Results
                   </Link>
                 </div>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">
-                Login
-              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
