@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Trophy } from "lucide-react";
+import { Trophy, Star, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
@@ -115,16 +115,31 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         
         <div className="grid md:grid-cols-3 gap-4 mb-8">
           <Card className="p-4 bg-white">
-            <h3 className="font-semibold mb-2">Achievement Unlocked</h3>
-            <p className="text-sm text-gray-600">Self-Awareness Master</p>
+            <div className="flex flex-col items-center">
+              <Badge className={`${badgeColor} p-2 mb-2`}>
+                <Trophy className="w-4 h-4 text-white" />
+              </Badge>
+              <h3 className="font-semibold mb-2">Achievement Unlocked</h3>
+              <p className="text-sm text-gray-600">Self-Awareness Master</p>
+            </div>
           </Card>
           <Card className="p-4 bg-white">
-            <h3 className="font-semibold mb-2">Your Score</h3>
-            <p className="text-sm text-gray-600">Financial Explorer Level 1</p>
+            <div className="flex flex-col items-center">
+              <Badge className={`${badgeColor} p-2 mb-2`}>
+                <Star className="w-4 h-4 text-white" />
+              </Badge>
+              <h3 className="font-semibold mb-2">Your Score</h3>
+              <p className="text-sm text-gray-600">Financial Explorer Level 1</p>
+            </div>
           </Card>
           <Card className="p-4 bg-white">
-            <h3 className="font-semibold mb-2">Next Steps</h3>
-            <p className="text-sm text-gray-600">Follow Your Action Plan</p>
+            <div className="flex flex-col items-center">
+              <Badge className={`${badgeColor} p-2 mb-2`}>
+                <Clock className="w-4 h-4 text-white" />
+              </Badge>
+              <h3 className="font-semibold mb-2">Next Steps</h3>
+              <p className="text-sm text-gray-600">Follow Your Action Plan</p>
+            </div>
           </Card>
         </div>
 
@@ -143,21 +158,24 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         </Card>
 
         <Card className="p-6 bg-white">
-          <h2 className="text-xl font-bold mb-2">Want More Personalized Guidance?</h2>
-          <p className="text-gray-600 mb-4">
-            Join the waitlist for Meodin, our new AI-powered financial companion that will help simplify your journey.
-          </p>
-          <div className="flex gap-2">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="max-w-xs"
-            />
-            <Button onClick={handleWaitlistSignup}>
-              Join Waitlist
-            </Button>
+          <div className="flex flex-col items-center">
+            <img src="/moedi-logo.png" alt="Moedi" className="w-24 h-24 mb-4" />
+            <h2 className="text-xl font-bold mb-2">Coming Soon</h2>
+            <p className="text-gray-600 mb-4">
+              Join the waitlist for Moedi, your AI-powered financial companion that will help simplify your journey.
+            </p>
+            <div className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="max-w-xs"
+              />
+              <Button onClick={handleWaitlistSignup}>
+                Join Waitlist
+              </Button>
+            </div>
           </div>
         </Card>
       </Card>
