@@ -30,10 +30,10 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
   const currentQuestion = currentLevelQuestions[currentQuestionIndex];
 
   const encouragements = [
-    "You're doing great! Keep going!",
-    "That's the spirit! Every answer brings you closer to your goals.",
-    "Excellent choice! You're building strong financial habits.",
-    "Keep up the momentum! You're making great progress."
+    "Muito bem! Continue assim!",
+    "Ótimo! Cada resposta te aproxima dos seus objetivos.",
+    "Excelente escolha! Você está construindo bons hábitos financeiros.",
+    "Mantenha o ritmo! Você está fazendo um ótimo progresso."
   ];
 
   const handleAnswer = (selectedOption: string) => {
@@ -45,13 +45,12 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
 
     if (currentQuestionIndex < currentLevelQuestions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
-      if (Math.random() > 0.5) { // Show encouragement randomly
+      if (Math.random() > 0.5) {
         toast.success(encouragements[Math.floor(Math.random() * encouragements.length)]);
       }
     } else if (currentLevel < 3) {
       setShowLevelTransition(true);
     } else {
-      // Store quiz results when completed
       const result = {
         persona,
         answers: newAnswers,
@@ -71,11 +70,11 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
   const getLevelTitle = () => {
     switch (persona) {
       case "nest":
-        return currentLevel === 1 ? "Daily Habits" : currentLevel === 2 ? "Emergency Ready" : "Future Planner";
+        return currentLevel === 1 ? "Hábitos Diários" : currentLevel === 2 ? "Pronta para Emergências" : "Planejadora do Futuro";
       case "debt":
-        return currentLevel === 1 ? "Understanding Your Debt" : currentLevel === 2 ? "Building Your Arsenal" : "Future Goals";
+        return currentLevel === 1 ? "Entendendo Suas Dívidas" : currentLevel === 2 ? "Construindo Seu Arsenal" : "Metas Futuras";
       case "invest":
-        return currentLevel === 1 ? "Beginner's Camp" : currentLevel === 2 ? "Picking Your Path" : "Long-Term Vision";
+        return currentLevel === 1 ? "Acampamento do Iniciante" : currentLevel === 2 ? "Escolhendo Seu Caminho" : "Visão de Longo Prazo";
     }
   };
 
@@ -146,4 +145,3 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
       </Card>
     </div>
   );
-};

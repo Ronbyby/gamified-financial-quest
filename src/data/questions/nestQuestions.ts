@@ -1,96 +1,96 @@
 import { Question } from "@/types";
 
 export const nestQuestions: Question[] = [
-  // Level 1: Hábitos Diários
+  // Nível 1: Hábitos Diários
   {
     id: "nest-1-1",
-    text: "Qual é seu maior desafio financeiro como mãe?",
+    text: "Seu bebê precisa de fraldas, comida e brinquedos. Como você decide o que comprar?",
     level: 1,
     options: [
-      { text: "Gerenciar despesas inesperadas", value: "a", points: 3 },
-      { text: "Manter um orçamento", value: "b", points: 2 },
-      { text: "Economizar consistentemente", value: "c", points: 1 }
+      { text: "Faço uma lista e sigo à risca", value: "a", points: 3 },
+      { text: "Compro conforme a necessidade e acompanho depois", value: "b", points: 2 },
+      { text: "Compro sem muito planejamento e espero que dê certo!", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-1-2",
-    text: "Você acompanha pequenas despesas diárias como lanches ou transporte?",
+    text: "Qual é sua estratégia para gerenciar os gastos mensais?",
     level: 1,
     options: [
-      { text: "Sim, anoto tudo", value: "a", points: 3 },
-      { text: "Só se for um valor significativo", value: "b", points: 2 },
-      { text: "Não acompanho", value: "c", points: 1 }
+      { text: "Tenho um orçamento definido", value: "a", points: 3 },
+      { text: "Tento, mas é difícil seguir", value: "b", points: 2 },
+      { text: "Ainda não planejo, mas quero começar!", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-1-3",
-    text: "Quando compra itens para o bebê, com que frequência você compara preços?",
+    text: "Você monitora pequenas despesas diárias, como lanches ou transporte?",
     level: 1,
     options: [
-      { text: "Sempre, sou uma compradora esperta!", value: "a", points: 3 },
-      { text: "Às vezes, quando lembro", value: "b", points: 2 },
-      { text: "Raramente, vou pelo que é mais conveniente", value: "c", points: 1 }
+      { text: "Sim, anoto tudo", value: "a", points: 3 },
+      { text: "Só quando o valor é alto", value: "b", points: 2 },
+      { text: "Não, mas gostaria de começar", value: "c", points: 1 }
     ]
   },
-  // Level 2: Preparação para Emergências
+  // Nível 2: Pronta para Emergências
   {
     id: "nest-2-1",
     text: "Se surgisse uma conta médica inesperada para seu filho, como você lidaria?",
     level: 2,
     options: [
-      { text: "Usaria minhas economias", value: "a", points: 3 },
+      { text: "Usaria a poupança que já guardei", value: "a", points: 3 },
       { text: "Pagaria com cartão de crédito", value: "b", points: 2 },
-      { text: "Não tenho certeza", value: "c", points: 1 }
+      { text: "Não sei o que faria", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-2-2",
-    text: "Qual sua estratégia para lidar com períodos sem renda, como licença maternidade?",
+    text: "Qual é sua estratégia para lidar com períodos de menor renda, como a licença-maternidade?",
     level: 2,
     options: [
-      { text: "Confiar nas economias", value: "a", points: 3 },
-      { text: "Ajustar minhas despesas", value: "b", points: 2 },
-      { text: "Não planejei isso", value: "c", points: 1 }
+      { text: "Conto com minhas economias", value: "a", points: 3 },
+      { text: "Ajusto minhas despesas", value: "b", points: 2 },
+      { text: "Não planejei para isso", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-2-3",
-    text: "Você já considerou planos de saúde ou seguros para seu filho?",
+    text: "Você já considerou um seguro ou plano de saúde para o seu filho?",
     level: 2,
     options: [
-      { text: "Sim, já pesquisei sobre isso", value: "a", points: 3 },
-      { text: "Ainda não, mas está nos meus planos", value: "b", points: 2 },
+      { text: "Sim, já pesquisei", value: "a", points: 3 },
+      { text: "Ainda não, mas está na minha mente", value: "b", points: 2 },
       { text: "Não sei por onde começar", value: "c", points: 1 }
     ]
   },
-  // Level 3: Planejamento Futuro
+  // Nível 3: Planejadora do Futuro
   {
     id: "nest-3-1",
-    text: "Você consideraria abrir uma conta poupança separada para seu filho?",
+    text: "Você abriria uma conta de poupança separada para o seu filho?",
     level: 3,
     options: [
-      { text: "Sim, já tenho uma ou planejo ter", value: "a", points: 3 },
+      { text: "Sim, já tenho ou planejo abrir", value: "a", points: 3 },
       { text: "Talvez no futuro", value: "b", points: 2 },
-      { text: "Não, vou gerenciar tudo em uma conta", value: "c", points: 1 }
+      { text: "Não, prefiro gerenciar tudo em uma conta só", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-3-2",
-    text: "Se pudesse ensinar um hábito financeiro cedo para seu filho, qual seria?",
+    text: "Se pudesse ensinar um hábito financeiro ao seu filho cedo, qual seria?",
     level: 3,
     options: [
-      { text: "A importância de poupar", value: "a", points: 3 },
-      { text: "Controlar a mesada", value: "b", points: 2 },
-      { text: "Entender como o dinheiro cresce", value: "c", points: 1 }
+      { text: "A importância de economizar", value: "a", points: 3 },
+      { text: "Como fazer um orçamento", value: "b", points: 2 },
+      { text: "Como o dinheiro pode crescer", value: "c", points: 1 }
     ]
   },
   {
     id: "nest-3-3",
-    text: "Você preferiria um produto financeiro que poupe automaticamente para o futuro do seu filho?",
+    text: "Você preferiria um produto financeiro que economizasse automaticamente para o futuro do seu filho?",
     level: 3,
     options: [
       { text: "Sim, adoraria isso", value: "a", points: 3 },
-      { text: "Talvez, se for flexível", value: "b", points: 2 },
+      { text: "Talvez, se fosse flexível", value: "b", points: 2 },
       { text: "Não, prefiro controle manual", value: "c", points: 1 }
     ]
   }
