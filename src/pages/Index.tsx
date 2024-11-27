@@ -1,11 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { PersonaSelection } from "@/components/PersonaSelection";
+import { Quiz } from "@/components/Quiz";
+import { Results } from "@/components/Results";
+import type { Persona, Answer } from "@/types";
 
 const Index = () => {
+  const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
+  const [answers, setAnswers] = useState<Answer[]>([]);
+  const [isComplete, setIsComplete] = useState(false);
+
+  const handlePersonaSelect = (persona: Persona) => {
+    setSelectedPersona(persona);
+  };
+
+  const handleQuizComplete = (finalAnswers: Answer[]) => {
+    setAnswers(finalAnswers);
+    setIsComplete(true);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-8 px-4">
+      <div className="max-w-4xl mx-auto">
+        {!selectedPersona && (
+          <PersonaSelection onSelect={handlePersonaSelect} />
+        )}
+        {selectedPersona && !isComplete && (
+          <Quiz 
+            persona={selectedPersona} 
+            onComplete={handleQuizComplete}
+          />
+        )}
+        {isComplete && (
+          <Results 
+            persona={selectedPersona} 
+            answers={answers}
+          />
+        )}
       </div>
     </div>
   );
