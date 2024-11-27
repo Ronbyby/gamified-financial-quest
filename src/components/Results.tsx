@@ -157,8 +157,8 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
             <img 
-              src="/lovable-uploads/c55dd378-8bf8-45d1-8b5a-060b8d7f0685.png"
-              alt="Sunrise over mountains with water reflection symbolizing a bright financial future" 
+              src="/lovable-uploads/c9498fe6-0c9b-4a15-84f5-293118678588.png"
+              alt="Moedin logo with a smiling coin character wearing glasses" 
               className="w-full max-w-2xl mb-4 object-cover rounded-lg"
             />
             <h2 className="text-xl font-bold mb-2">Coming Soon</h2>
