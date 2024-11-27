@@ -24,11 +24,12 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           style={{ animationDelay: "0.3s" }}
         >
           <div className="space-y-6">
-            <div className="h-40 bg-nest-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <div className="flex flex-col items-center space-y-2">
-                <span className="text-6xl group-hover:animate-bounce transition-all duration-300">🏰</span>
-                <span className="text-4xl group-hover:animate-bounce transition-all duration-300" style={{ animationDelay: "0.1s" }}>💎</span>
-              </div>
+            <div className="h-40 bg-nest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                alt="New mother working on finances"
+                className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text">
               Financial Nest Builder
@@ -45,11 +46,12 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           style={{ animationDelay: "0.4s" }}
         >
           <div className="space-y-6">
-            <div className="h-40 bg-debt-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <div className="flex flex-col items-center space-y-2">
-                <span className="text-6xl group-hover:animate-pulse transition-all duration-300">⚔️</span>
-                <span className="text-4xl group-hover:animate-pulse transition-all duration-300" style={{ animationDelay: "0.1s" }}>🛡️</span>
-              </div>
+            <div className="h-40 bg-debt-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                alt="Person worried about debt"
+                className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 text-transparent bg-clip-text">
               Debt Slayer Adventure
@@ -66,11 +68,12 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           style={{ animationDelay: "0.5s" }}
         >
           <div className="space-y-6">
-            <div className="h-40 bg-invest-primary rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-              <div className="flex flex-col items-center space-y-2">
-                <span className="text-6xl group-hover:animate-pulse transition-all duration-300">🚀</span>
-                <span className="text-4xl group-hover:animate-pulse transition-all duration-300" style={{ animationDelay: "0.1s" }}>💫</span>
-              </div>
+            <div className="h-40 bg-invest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                alt="Successful investor"
+                className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
               Investor's Journey
