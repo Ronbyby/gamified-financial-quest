@@ -157,9 +157,9 @@ export const Results = ({ persona, answers }: ResultsProps) => {
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
             <img 
-              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
-              alt="Rising sun over mountains symbolizing a bright financial future" 
-              className="w-64 h-48 mb-4 object-cover rounded-lg"
+              src="/lovable-uploads/c55dd378-8bf8-45d1-8b5a-060b8d7f0685.png"
+              alt="Sunrise over mountains with water reflection symbolizing a bright financial future" 
+              className="w-full max-w-2xl mb-4 object-cover rounded-lg"
             />
             <h2 className="text-xl font-bold mb-2">Coming Soon</h2>
             <p className="text-gray-600 mb-4">
