@@ -30,10 +30,10 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
   const currentQuestion = currentLevelQuestions[currentQuestionIndex];
 
   const encouragements = [
-    "Muito bem! Continue assim!",
-    "Ótimo! Cada resposta te aproxima dos seus objetivos.",
-    "Excelente escolha! Você está construindo bons hábitos financeiros.",
-    "Mantenha o ritmo! Você está fazendo um ótimo progresso."
+    "Great job! Keep going!",
+    "Excellent! Every answer brings you closer to your goals.",
+    "Well done! You're building good financial habits.",
+    "Keep up the momentum! You're making great progress."
   ];
 
   const handleAnswer = (selectedOption: string) => {
@@ -70,11 +70,11 @@ export const Quiz = ({ persona, onComplete }: QuizProps) => {
   const getLevelTitle = () => {
     switch (persona) {
       case "nest":
-        return currentLevel === 1 ? "Hábitos Diários" : currentLevel === 2 ? "Pronta para Emergências" : "Planejadora do Futuro";
+        return currentLevel === 1 ? "Daily Habits" : currentLevel === 2 ? "Emergency Ready" : "Future Planner";
       case "debt":
-        return currentLevel === 1 ? "Entendendo Suas Dívidas" : currentLevel === 2 ? "Construindo Seu Arsenal" : "Metas Futuras";
+        return currentLevel === 1 ? "Understanding Your Debt" : currentLevel === 2 ? "Building Your Arsenal" : "Future Goals";
       case "invest":
-        return currentLevel === 1 ? "Acampamento do Iniciante" : currentLevel === 2 ? "Escolhendo Seu Caminho" : "Visão de Longo Prazo";
+        return currentLevel === 1 ? "Beginner's Camp" : currentLevel === 2 ? "Picking Your Path" : "Long-Term Vision";
     }
   };
 
