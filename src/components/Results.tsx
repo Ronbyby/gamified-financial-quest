@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
 import { addWaitlistEntry } from "@/api/waitlist";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface ResultsProps {
   persona: Persona;
@@ -15,6 +16,7 @@ interface ResultsProps {
 
 export const Results = ({ persona, answers }: ResultsProps) => {
   const [email, setEmail] = useState("");
+  const queryClient = useQueryClient();
 
   const getPersonaTitle = () => {
     switch (persona) {
@@ -60,11 +62,14 @@ export const Results = ({ persona, answers }: ResultsProps) => {
     }
 
     try {
-      const response = await addWaitlistEntry({ 
+      await addWaitlistEntry({ 
         email,
         persona,
         notifyEmail: 'ronby1@gmail.com'
       });
+      
+      // Invalidate and refetch waitlist data
+      await queryClient.invalidateQueries({ queryKey: ['waitlist'] });
       
       toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
       setEmail("");

@@ -12,7 +12,8 @@ interface WaitlistEntry {
 const WaitlistAdmin = () => {
   const { data: entries, isLoading, error } = useQuery({
     queryKey: ['waitlist'],
-    queryFn: getWaitlistEntries
+    queryFn: getWaitlistEntries,
+    refetchInterval: 5000, // Refetch every 5 seconds
   });
 
   if (isLoading) {
