@@ -26,8 +26,8 @@ export const PersonaSelection = ({ onSelect }: PersonaSelectionProps) => {
           <div className="space-y-6">
             <div className="h-40 bg-nest-primary rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                alt="New mother working on finances"
+                src="https://images.unsplash.com/photo-1623104884-16c736554e5d"
+                alt="Mother playing with kids while managing finances"
                 className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
               />
             </div>
