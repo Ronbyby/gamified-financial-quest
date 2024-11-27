@@ -12,11 +12,16 @@ const WaitlistAdmin = () => {
   const { data: entries, isLoading, error } = useQuery({
     queryKey: ['waitlist'],
     queryFn: async () => {
-      const response = await fetch('/api/waitlist');
-      if (!response.ok) {
-        throw new Error('Failed to fetch waitlist data');
+      try {
+        const response = await fetch('/api/waitlist');
+        if (!response.ok) {
+          throw new Error('Failed to fetch waitlist data');
+        }
+        return response.json() as Promise<WaitlistEntry[]>;
+      } catch (error) {
+        console.error('Waitlist fetch error:', error);
+        throw error;
       }
-      return response.json() as Promise<WaitlistEntry[]>;
     },
   });
 
@@ -40,13 +45,13 @@ const WaitlistAdmin = () => {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-6">Waitlist Entries</h1>
-      {entries?.length === 0 ? (
+      {!entries || entries.length === 0 ? (
         <Card className="p-4 text-center text-gray-500">
           No entries in the waitlist yet
         </Card>
       ) : (
         <div className="space-y-4">
-          {entries?.map((entry, index) => (
+          {entries.map((entry, index) => (
             <Card key={index} className="p-4">
               <div className="flex justify-between items-center">
                 <div>
