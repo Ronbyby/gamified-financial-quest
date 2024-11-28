@@ -2,12 +2,13 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Star, Clock, Home, Sparkles } from "lucide-react";
+import { Trophy, Star, Clock, Home } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Persona, Answer } from "@/types";
 import { addWaitlistEntry } from "@/api/waitlist";
 import { useQueryClient } from "@tanstack/react-query";
+import { AIFeaturePreview } from "./results/AIFeaturePreview";
 
 interface ResultsProps {
   persona: Persona;
@@ -165,26 +166,7 @@ export const Results = ({ persona, answers, onReset }: ResultsProps) => {
           </ul>
         </Card>
 
-        {persona === "nest" && (
-          <Card className="p-8 bg-white mb-8 text-center">
-            <div className="max-w-2xl mx-auto">
-              <Badge variant="outline" className={`${badgeColor} text-white p-2 mb-4 inline-flex`}>
-                <Sparkles className="w-4 h-4" />
-              </Badge>
-              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                Imagine uma ferramenta que ajuda você a economizar sem esforço
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                E se o Moedin pudesse tirar as dúvidas e simplificar o planejamento para o sucesso do seu bebê?
-              </p>
-              <div className="flex justify-center space-x-2">
-                <div className="w-2 h-2 rounded-full bg-purple-300 animate-pulse"></div>
-                <div className="w-2 h-2 rounded-full bg-pink-300 animate-pulse delay-100"></div>
-                <div className="w-2 h-2 rounded-full bg-purple-300 animate-pulse delay-200"></div>
-              </div>
-            </div>
-          </Card>
-        )}
+        <AIFeaturePreview persona={persona} badgeColor={badgeColor} />
 
         <Card className="p-6 bg-white">
           <div className="flex flex-col items-center">
